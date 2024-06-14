@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>My Shop App</title>
+</head>
+<body>
+  <div id="app">
+    <h1>{{ product }}</h1>
+    <img v-bind:src="image">
+    <a :href="url">Made by Vue Mastery</a>
+  </div>
+
+</body>
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+
+  const app = Vue.createApp({
+    data() {
+      return {
+        message: "Hello World!",
+        product: 'Sweets',
+        image: './assets/images/your-image.jpg',
+        url: 'https://www.vuejs.org/'
+      }
+    }
+  })
+
+ app.mount('#app')
+
+</script>
+</html>

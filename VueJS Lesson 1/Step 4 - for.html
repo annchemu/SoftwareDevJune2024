@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>My Shop App</title>
+</head>
+<body>
+  <div id="app">
+    <h1>{{ product }}</h1>
+    <img v-bind:src="image">
+    <a :href="url">Made by Vue Mastery</a>
+    <!-- simple array demo -->
+    <ol>
+        <li v-for="item in stock">{{ item }}</li>
+      </ol>
+      <!-- Stock with price demo -->
+      <ol>
+        <li v-for="(item, index) in stock">{{ index }}: "{{ item.itemName }}", price: "{{ item.itemPrice }}"</li>
+      </ol>
+  </div>
+
+</body>
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+
+  const app = Vue.createApp({
+    data() {
+      return {
+        message: "Hello World!",
+        product: 'Sweets',
+        image: './assets/images/your-image.jpg',
+        url: 'https://www.vuejs.org/',
+        //simple array demo
+        stock: ["Sweets", "Lollipop", "Chocolates", "Chewing Gum"],
+        //Object demo
+        stockDetails : [
+            {
+                itemNumber: 1,
+                itemName : "Sweets",
+                itemPrice : 5,
+                itemQuantity : 30
+            },
+            {
+                itemNumber: 27466,
+                itemName : "Lollipop",
+                itemPrice : 10,
+                itemQuantity : 46
+            }
+        ]
+      }
+    }
+  })
+
+ app.mount('#app')
+
+</script>
+</html>
